@@ -1,4 +1,4 @@
-let alunos = require('./alunos')
+let alunos = require('./alunos');
 
 let curso = {
     
@@ -12,12 +12,15 @@ let curso = {
         this.listaEstudantes.push(novoAluno);
     },
 
-    aprovacao: function(nomeAluno) {
+    // Função recebe como argumento um objeto Aluno ou o nome do aluno
+    aprovacao: function(aluno) {
+        
+        if (typeof aluno === "string") {
+            aluno = this.listaEstudantes.find(alunoLista => alunoLista.nome === aluno);
 
-        let aluno = this.listaEstudantes.find(aluno => aluno.nome === nomeAluno);
-
-        if (aluno === undefined) {
-            return ('Aluno não encontrado')
+            if (aluno === undefined) {
+                return ('Aluno não encontrado');
+            }
         }
 
         return (aluno.calcularMedia() >= this.notaDeAprovacao && aluno.quantidadeFaltas < this.faltasMaximas) || 
@@ -26,9 +29,9 @@ let curso = {
     },
 
     alunosAprovados: function() {
-        return this.listaEstudantes.map(aluno => this.aprovacao(aluno.nome))
+        return this.listaEstudantes.map(aluno => this.aprovacao(aluno));
     }
 }
 
-curso.alunoExtra("Zacarias", 4, [7, 8, 9])
-console.log(curso.alunosAprovados())
+curso.alunoExtra("Zacarias", 4, [7, 8, 9]);
+console.log(curso.alunosAprovados());

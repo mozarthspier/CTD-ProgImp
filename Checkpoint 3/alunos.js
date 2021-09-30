@@ -11,7 +11,7 @@ let alunos = {
                 return acum + value;
             });           
             
-            return somaNotas/this.notas.length
+            return somaNotas/this.notas.length;
         }
 
         this.faltas = function() {
@@ -20,14 +20,14 @@ let alunos = {
     }
 }
 
-let aluno1 = new alunos.Aluno('Alberto', 5, [8.8, 8.8, 8.7])
-let aluno2 = new alunos.Aluno('Jorge', 4, [7.7, 10.0, 8.0])
-let aluno3 = new alunos.Aluno('Amanda', 9, [5.9, 9.7, 10])
-let aluno4 = new alunos.Aluno('Juliana', 3, [4.9, 10.0, 10.0])
+let aluno1 = new alunos.Aluno('Alberto', 5, [8.8, 8.8, 8.7]);
+let aluno2 = new alunos.Aluno('Jorge', 4, [7.7, 10.0, 8.0]);
+let aluno3 = new alunos.Aluno('Amanda', 9, [5.9, 9.7, 10]);
+let aluno4 = new alunos.Aluno('Juliana', 3, [4.9, 10.0, 10.0]);
 
-alunos.listaDeAlunos = [aluno1, aluno2, aluno3, aluno4]
+alunos.listaDeAlunos = [aluno1, aluno2, aluno3, aluno4];
 
-module.exports = alunos
+module.exports = alunos;
 
 
 
